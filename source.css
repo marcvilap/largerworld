@@ -1,0 +1,224 @@
+@import url(./node_modules/swiper/swiper.css);
+
+@font-face {
+  font-family: "Gordita";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./assets/fonts/gordita-regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Gordita";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(./assets/fonts/gordita-medium.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Gordita";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(./assets/fonts/gordita-bold.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "SF Hello";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./assets/fonts/sf-hello-regular.woff2) format("woff2");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @media (max-width: 400px) {
+    html {
+      font-size: 4vw;
+    }
+  }
+
+  html {
+    @apply bg-neutral-800 text-white antialiased;
+  }
+
+  body {
+    @apply md:text-xl;
+  }
+}
+
+@layer components {
+  .input-text {
+    @apply w-full appearance-none rounded-none border border-current bg-transparent px-4 py-[.9375rem] text-center text-lg outline-none;
+  }
+
+  .button {
+    @apply inline-flex h-[3.75rem] cursor-pointer items-center justify-center border-current px-8 text-center text-lg font-medium leading-none transition-transform duration-300 will-change-transform hover:scale-95;
+  }
+
+  .alert {
+    @apply p-4 mt-4 hidden text-center text-base;
+  }
+
+  .alert-success {
+    @apply block bg-green-200 text-green-800;
+  }
+
+  .alert-failure {
+    @apply block bg-red-200 text-red-800;
+  }
+}
+
+@layer utilities {
+  .hover-links-underline a {
+    @apply hover:underline;
+  }
+}
+
+@screen md {
+  .reveal-group .reveal-zoom-in,
+  .reveal-group .reveal-fade-in,
+  .reveal-group .reveal-fade-up,
+  .reveal-group .reveal-fade-left,
+  .reveal-group .reveal-fade-right {
+    transition-property: opacity, transform;
+    transition-duration: 0ms;
+    transition-delay: 0ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+  }
+
+  .reveal-group .reveal-zoom-in {
+    transform: translate3d(0, 0, 0) scale(0.75);
+  }
+
+  .reveal-group .reveal-fade-up {
+    transform: translate3d(0, 10rem, 0) scale(1);
+  }
+
+  .reveal-group .reveal-fade-left {
+    transform: translate3d(10rem, 0, 0) scale(1);
+  }
+
+  .reveal-group .reveal-fade-right {
+    transform: translate3d(-10rem, 0, 0) scale(1);
+  }
+
+  .reveal-group.reveal-active .reveal-zoom-in,
+  .reveal-group.reveal-active .reveal-fade-in,
+  .reveal-group.reveal-active .reveal-fade-up,
+  .reveal-group.reveal-active .reveal-fade-left,
+  .reveal-group.reveal-active .reveal-fade-right {
+    will-change: transform, opacity;
+    transition-duration: 1000ms;
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+
+  .reveal-group.reveal-active .reveal-delay-100 {
+    transition-delay: 100ms;
+  }
+
+  .reveal-group.reveal-active .reveal-delay-200 {
+    transition-delay: 200ms;
+  }
+
+  .reveal-group.reveal-active .reveal-delay-300 {
+    transition-delay: 300ms;
+  }
+
+  .reveal-group.reveal-active .reveal-delay-400 {
+    transition-delay: 400ms;
+  }
+
+  .reveal-group.reveal-active .reveal-delay-500 {
+    transition-delay: 500ms;
+  }
+
+  .reveal-group.reveal-active .reveal-delay-600 {
+    transition-delay: 600ms;
+  }
+}
+
+.prose {
+  @apply grid gap-6;
+}
+
+.prose iframe {
+  @apply w-full h-auto aspect-video bg-black;
+}
+
+/****************************************** WOOCOMMERCE SETTINGS ******************************************/
+
+/*************** CHECKEOUT PAGE ***************/
+
+.wp-block-woocommerce-checkout-order-summary-block {
+  @apply hidden;
+}
+
+.wc-block-components-sidebar-layout .wc-block-components-main {
+  width: 100% !important;
+}
+
+.wc-block-components-button {
+  width: 100% !important;
+  background-color: white;
+  color: #282828;
+}
+
+.wc-block-components-form input {
+  background-color: transparent !important;
+  color: white !important;
+}
+
+.wc-block-components-form label {
+  color: #aaaaaa !important;
+}
+
+.wc-block-components-title.wc-block-components-title::before,
+.wc-block-components-checkout-step--with-step-number
+  .wc-block-components-checkout-step__container::after {
+  display: none !important;
+}
+
+.wc-block-components-checkout-step__title {
+  text-align: center;
+}
+
+.woocommerce-info {
+  background: transparent !important;
+  border: 1px solid !important;
+  color: white !important;
+}
+
+.woocommerce-info::before {
+  color: white !important;
+}
+
+.woocommerce-notice--success,
+.woocommerce-order-overview,
+.woocommerce-order-details,
+.woocommerce-customer-details {
+  display: none !important;
+}
+
+.wc-bacs-bank-details-account-name {
+  margin: 2rem 0 !important;
+}
+
+.wc-block-components-title.wc-block-components-title,
+.wc-block-components-checkout-step__description,
+.wp-block-woocommerce-checkout-shipping-method-block,
+.wp-block-woocommerce-checkout-pickup-options-block {
+  display: none !important;
+}
+
+#contact-fields {
+  position: relative;
+  top: 3rem;
+}

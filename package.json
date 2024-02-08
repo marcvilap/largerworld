@@ -1,0 +1,24 @@
+{
+	"type": "module",
+	"scripts": {
+		"dev:css": "tailwindcss -i source.css -o bundle.css -w --postcss",
+		"dev:js": "rollup -cw --configPlugin typescript",
+		"dev": "concurrently \"npm run dev:css\" \"npm run dev:js\"",
+		"build": "tailwindcss -i source.css -o bundle.css --postcss && rollup -c --configPlugin typescript"
+	},
+	"devDependencies": {
+		"@rollup/plugin-node-resolve": "^15.2.3",
+		"@rollup/plugin-terser": "^0.4.4",
+		"@rollup/plugin-typescript": "^11.1.5",
+		"autoprefixer": "^10.4.16",
+		"concurrently": "^8.2.2",
+		"cssnano": "^6.0.1",
+		"postcss": "^8.4.31",
+		"postcss-import": "^15.1.0",
+		"rollup": "^4.5.0",
+		"swiper": "^11.0.4",
+		"tailwindcss": "^3.3.5",
+		"tslib": "^2.6.2",
+		"typescript": "^5.3.2"
+	}
+}
